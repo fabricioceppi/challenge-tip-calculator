@@ -13,16 +13,55 @@ body {
 
 legend {
     width: 0;
+    height: 0;
     visibility: hidden; 
 }
 
 input {
     font-size: 24px;
+    width: 100%;
+    border: none;
+    background-color: hsl(189, 41%, 97%);
+    border-radius: 6px;
+    text-align: right;
+    color: hsl(183, 100%, 15%);
+    font-weight: 700;
+    padding: 6px 12px;
 }
 
-label {
+input:focus {
+    outline: none;
+    border: 2px solid hsl(172, 67%, 45%);
+    padding: 4px 10px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: hsl(183, 100%, 15%);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: hsl(183, 100%, 15%);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: hsl(183, 100%, 15%);
+  }
+
+label, fieldset > p {
     font-size: 14px;
     color: hsl(186, 14%, 43%);
+    display: inline-block;
+    padding-bottom: 8px;
+    font-weight: 700;
+}
+
+label, button, input {
+    cursor: pointer;
+}
+
+fieldset {
+    border: none;
 }
 
 h2 {
@@ -42,6 +81,87 @@ main > div {
     margin: 0 auto;
     padding: 32px;
     border-radius: 24px;
+}
+
+form {
+    padding: 0 12px 32px 12px;
+}
+
+form > div {
+    position: relative;
+}
+
+form img {
+    position: absolute;
+    bottom: 15px;
+    left: 12px;
+}
+
+fieldset {
+    padding: 32px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-around;
+}
+
+fieldset input, fieldset label {
+    display: block;
+    width: 47%;
+    width: calc(50% - 8px);
+    height: 45px;
+    margin-top: 16px;
+}
+
+fieldset label {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 700;
+    color: hsl(189, 41%, 97%);
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+fieldset label:hover, #reset:enabled:hover {
+    background-color: #9ce8df;
+    color: hsl(183, 100%, 15%);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+fieldset > p {
+    width: 100%;
+    flex: 0 0 100%;
+    padding-bottom: 0;
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+input[type='radio']:checked + label {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+label[for='custom'] {
+    visibility: hidden;
+    position: absolute;
+    height: 0;
+    width: 0;
+    padding-bottom: 0;
+    flex: 0 0 0;
+}
+
+#error {
+    text-align: right;
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-block;
+    float: right;
+    color: #e29a80;
+    line-height: 28px;
+    display: none;
 }
 
 section {
@@ -83,15 +203,56 @@ section p {
     padding: 8px;
 }
 
+#reset:disabled {
+    opacity: 0.2;
+}
+
 /* attribution footer from FrontendMentor */
 
 .attribution {
   font-size: 11px;
   text-align: center;
-  /*position: absolute;
-  width: 100%;
-  bottom: 8px;*/
+  margin-top: 32px;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* desktop adjustments */
+
+@media only screen and (min-width: 740px) {
+
+    main > div {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    form, section {
+        flex: 0 1 50%;
+    }
+
+    form {
+        padding-bottom: 0;
+        padding-right: 35px;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #reset {
+        margin-top: auto;
+    }
+
+    .attribution {
+        margin-top: 0;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+    }
+
+    fieldset input, fieldset label {
+        width: 30.5%;
+    }
 }

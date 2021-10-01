@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main>
+    <img id='logo' src="images/logo.svg" alt="Splitter, tip calculator logo">
+    <div>
+      <form>
+        <div>
+          <label for="bill">Bill</label>
+          <img src="images/icon-dollar.svg" alt="dollar symbol">
+          <input type="tel" id='bill' placeholder="0">
+        </div>
+        <fieldset>
+          <legend>Select tip</legend>
+          <p>Select Tip %</p>
+          <label for="five">5%</label>
+          <input type="radio" id='five' name='tip' value="5">
+          <label for="ten">10%</label>
+          <input type="radio" id='ten' name='tip' value="10">
+          <label for="fifteen">15%</label>
+          <input type="radio" id='fifteen' name='tip' value="15">
+          <label for="twentyfive">25%</label>
+          <input type="radio" id='twentyfive' name='tip' value="25">
+          <label for="fifty">50%</label>
+          <input type="radio" id='fifty' name='tip' value="50">
+          <label for="custom">Custom Tip</label>
+          <input type="tel" id='custom' placeholder="Custom">
+        </fieldset>
+        <div>
+          <label for="people">Number of People</label>
+          <span id='error'>Can't be zero</span>
+          <img src="images/icon-person.svg" alt="Decorative icon. Person silhouette">
+          <input type="tel" id='people' placeholder="0">
+        </div>
+      </form>
+
+      <section>
+        <div>
+          <div>
+            <h2>Tip Amount</h2>
+            <p>/ person</p>
+          </div>
+          <p id='display-tip'>$0.00</p>
+        </div>
+        <div>
+          <div>
+            <h2>Total</h2>
+            <p>/ person</p>
+          </div>
+          <p id='display-total'>$0.00</p>
+        </div>
+        <button id='reset'>RESET</button>
+      </section>
+    </div>
+  </main>
+
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/fabricioceppi">Fabricio Ceppi</a>.
+  </footer>
+</body>
+</html>

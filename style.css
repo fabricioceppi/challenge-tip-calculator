@@ -68,12 +68,6 @@ h2 {
     font-size: 14px;
 }
 
-h1 {
-    visibility: hidden;
-    height: 0;
-    width: 0;
-}
-
 /* main elements */
 
 #logo {
@@ -227,17 +221,6 @@ section p {
 /* desktop adjustments */
 
 @media only screen and (min-width: 740px) {
-
-    main {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    #logo {
-        margin-top: 0;
-    }
 
     main > div {
         display: flex;

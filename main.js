@@ -22,13 +22,13 @@ var yourBill = 0;
 var peopleAmount = 0;
 var tipPercentage = 0;
 
-bill.addEventListener('change', () => {
+bill.addEventListener('input', () => {
     yourBill = parseFloat(bill.value);
     calculate();
 });
 
 percentageButtons.forEach(element => {
-    element.addEventListener('change', () => {
+    element.addEventListener('input', () => {
         if (element.checked) {
             tipPercentage = parseFloat(element.value);
             calculate();
@@ -37,7 +37,7 @@ percentageButtons.forEach(element => {
     });
 });
 
-customPercentage.addEventListener('change', () => {
+customPercentage.addEventListener('input', () => {
     percentageButtons.forEach(element => {
         element.checked = false;
     });
@@ -46,7 +46,7 @@ customPercentage.addEventListener('change', () => {
     calculate();
 });
 
-people.addEventListener('change', () => {
+people.addEventListener('input', () => {
     let number = parseFloat(people.value);
     if (number <= 0) {
         error.textContent = "Can't be zero";

@@ -222,9 +222,20 @@ section p {
 
 @media only screen and (min-width: 740px) {
 
+    main {
+        height: 100vh;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+    }
+
     main > div {
         display: flex;
         flex-flow: row wrap;
+    }
+
+    #logo {
+        margin-top: 0;
     }
 
     form, section {
